@@ -1,0 +1,9 @@
+/* .custom-marker {
+    @apply relative -top-4 w-12 h-12 cursor-pointer -left-2;
+
+    &::before {
+        content: "\e0c8";
+        @apply top-0 right-0 text-4xl text-blue-400 absolute block;
+        font-family: "Material Icons";
+    }
+} */
