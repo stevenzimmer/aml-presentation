@@ -12,7 +12,7 @@ export default function Next(props) {
         >
             <div className="flex items-end relative">
                 <div className="">
-                    <Typography align="center" variant="h5" gutterbottom>
+                    <Typography align="center" variant="h5">
                         <Link to={props.section} duration={300}>
                             {props.children}
                         </Link>

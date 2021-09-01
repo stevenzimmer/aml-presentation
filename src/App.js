@@ -172,7 +172,7 @@ function App() {
                                 smooth={false}
                                 duration={300}
                                 isDynamic={true}
-                                onSetActive={(e, f, g) => {
+                                onSetActive={(e) => {
                                     if (e === "intro") {
                                         setNavClasses("");
                                     } else {
@@ -185,16 +185,11 @@ function App() {
                                         setActiveMap(false);
                                     }
                                 }}
-                                key={`element-${i}`}
                                 className={`nav-item w-6 h-6 md:w-12 md:h-12 border-b cursor-pointer shadow-lg mx-auto flex items-center justify-center ${
                                     i + 1 === sections.length
                                         ? "bg-green-50 hover:bg-green-100 border-transparent"
                                         : "bg-blue-50 hover:bg-blue-100 border-blue-200"
                                 }`}
-                                onSetInactive={(e, f) => {
-                                    console.log("on set inactive e", e);
-                                    console.log("on set inactive f", f);
-                                }}
                             >
                                 <span
                                     className={`material-icons text-sm md:text-3xl text-center block ${

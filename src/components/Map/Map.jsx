@@ -8,9 +8,9 @@ mapboxgl.accessToken =
     "pk.eyJ1Ijoic3RldmVuemltbWVyIiwiYSI6ImNrcTVobjRqeTFka20ycHF1cm9ud3h0d2YifQ.9UMD2rpWTV3zhL63tig5og";
 
 export default function Map(props) {
-    let coords = [];
     let mapContainer = useRef(null);
     useEffect(() => {
+        let coords = [];
         const map = new mapboxgl.Map({
             container: mapContainer,
             style: "mapbox://styles/stevenzimmer/ckq5zfknj2veo17nr2hccwfzq",
@@ -164,7 +164,7 @@ export default function Map(props) {
                 animate(counter);
             }
         });
-    }, [props.active]);
+    }, [props.active, props.coordinates]);
 
     return (
         <>

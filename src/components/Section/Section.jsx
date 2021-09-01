@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import ITyped from "react-ityped";
 import { Typography, Grid, Paper, makeStyles } from "@material-ui/core";
 import Map from "../Map/Map";
@@ -20,6 +20,7 @@ export default function Section(props) {
         },
         h1: {
             fontWeight: 500,
+            marginBottom: "20px",
             [theme.breakpoints.down("sm")]: {
                 fontSize: "30px",
             },
@@ -41,11 +42,8 @@ export default function Section(props) {
         "Dev Zim",
     ];
 
-    let sectionRef = useRef(null);
-
     return (
         <Grid
-            ref={(el) => (sectionRef = el)}
             key={props.index}
             id={props.data.id}
             container
@@ -57,7 +55,7 @@ export default function Section(props) {
                 {props.data.image && (
                     <img
                         className="w-full object-cover md:absolute h-full inset-0"
-                        src={`assets/images/${props.data.image}.jpg`}
+                        src={`assets/images/${props.data.image}.JPG`}
                         alt={props.data.title}
                     />
                 )}
@@ -71,16 +69,6 @@ export default function Section(props) {
             </Grid>
             <Grid item xs={12} sm={12} md={5} component={Paper} square>
                 <div className={classes.paper}>
-                    {/* <div className="flex items-end bg-green-50 w-12 h-12 rounded-full absolute top-1/2 left-1/2 animate-pulse"></div>
-                    <div className="flex items-end bg-blue-50 w-40 h-40 rounded-full absolute bottom-3/4 right-1/4 animate-pulse"></div>
-                    <div className="flex items-end bg-green-50 w-56 h-56 rounded-full absolute bottom-1/4 left-1/3 animate-pulse"></div>
-                    <div className="flex items-end bg-indigo-100 w-8 h-8 rounded-full absolute top-1/4 right-3/4 animate-pulse"></div>
-                    <div className="flex items-end bg-indigo-50 w-48 h-48 rounded-full absolute bottom-3/4 left-1/2 animate-pulse"></div> */}
-
-                    {/* <div className="flex items-end bg-purple-50 w-12 h-12 rounded-full absolute top-48 left-36 animate-pulse"></div> */}
-                    {/* <div className="flex items-end bg-pink-50 w-32 h-32 rounded-full absolute bottom-16 left-12 animate-pulsed"></div> */}
-                    {/* <div className="flex items-end bg-green-100 w-20 h-20 rounded-full absolute bottom-32 right-32 animate-pulse"></div> */}
-
                     {!props.isLast && (
                         <Next
                             index={props.index}
@@ -111,7 +99,6 @@ export default function Section(props) {
                                 <Typography
                                     align="center"
                                     variant="h2"
-                                    gutterBottom
                                     className={classes.h2}
                                 >
                                     {props.data.label}
@@ -120,9 +107,8 @@ export default function Section(props) {
 
                             <Typography
                                 align="center"
-                                color="Primary"
+                                color="primary"
                                 variant="h1"
-                                gutterBottom
                                 className={classes.h1}
                             >
                                 {props.data.title}
